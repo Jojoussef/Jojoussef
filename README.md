@@ -1,43 +1,94 @@
-<div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=26&duration=3500&pause=1000&color=58A6FF&center=true&vCenter=true&width=650&lines=Hey,+I'm+Youssef+Benatti+%F0%9F%91%8B;Software+Engineer+%E2%9A%A1;I+ship+full-stack+products+with+a+dash+of+AI" alt="Typing SVG" />
+# Youssef Benatti
 
-  <img src="https://skillicons.dev/icons?i=ts,js,react,nextjs,python,django,java,postgres,docker,git,tailwind,vercel" alt="Skills" />
+```
+Coordinates: 35.76°N, 10.82°E (Monastir, Tunisia)
+Role: Systems, Applied AI, and Security Engineer
+Portfolio: https://youssef-benatti.me
+Email: contact@youssef-benatti.me
+GitHub: @Jojoussef
+```
+
+I build systems that handle strict data integrity requirements, high-throughput retrieval pipelines, and distributed web applications. My background spans cryptographic audit trails, AI evaluation frameworks, network security assessments, and production SaaS architecture.
+
+---
+
+## ⚡ Verified Open-Source Engineering
+
+Recent patches submitted to core open-source repositories:
+
+| Ecosystem | PR / Subsystem | Technical Description | Impact & Test Scope |
+|---|---|---|---|
+| **UK Government BEIS** | [`inspect_ai#6078`](https://github.com/UKGovernmentBEIS/inspect_ai/pull/6078) `Merged` | Fixed reader selection in `precomputed_scores()` on HTTP(S) presigned URLs with query parameters. Scoped `urlparse(url).path` to prevent `.json` fallback errors on `.jsonl` files. | 2 unit test suites added. 776 scorer tests passed cleanly. |
+| **UK Government BEIS** | [`inspect_ai#5987`](https://github.com/UKGovernmentBEIS/inspect_ai/pull/5987) `Open` | Prevented empty model completions from receiving false `CORRECT` scores in `model_graded_qa` and `choice` scorers. Added `reason="no_response"` tracking. | 125 scorer tests verified. Preserved zero-choice evaluation invariants. |
+| **ZizkaDB** | [`ZizkaDB#231`](https://github.com/ZIZKA-AI-SL/ZizkaDB/pull/231) `Landed in #261` | Sealed tamper-evident audit gaps for EU AI Act Article 12 compliance. Extended SHA-256 event preimage across `tenant_id`, `agent_id`, `parent_event_id`, and DB sequence numbers in transactional `INSERT ... RETURNING`. | Added `GET /v1/events/verify`. 16 unit tests covering JSONB round-trip stability and field tamper detection. |
+| **Dex Identity Provider** | [`dex#5100`](https://github.com/dexidp/dex/pull/5100) `Open` | Replaced HTTP 500 crashes with typed `UserNotInRequiredGroupsError` returning HTTP 403 Forbidden in `connector/github/github.go`. | 3 unit tests added. Signed off with DCO per CNCF criteria. |
+| **HoloViz Panel** | [`panel#8974`](https://github.com/holoviz/panel/pull/8974) `Merged` | Fixed widget state collisions during HTML export in `panel/io/embed.py`. Required widget type and candidate value equality before merging duplicate keys. | 24 tests passed cleanly in `panel/tests/io/test_embed.py`. |
+| **HoloViz Panel** | [`panel#9028`](https://github.com/holoviz/panel/pull/9028) `Open` | Fixed inverted batch-update condition in `ReactiveESM._update_model`, enabling bidirectional `jslink` preprocessing on dynamically appended children. | Added Bokeh `CustomJS` callback verification test in `test_custom.py`. |
+| **IBM Docling** | [`docling#4993`](https://github.com/docling-project/docling/pull/4993) `Closed` | Preserved nested list structures across empty paragraph nodes in `MsWordDocumentBackend` by snapshotting list hierarchy state. | Markdown export verified with 4-space indent retention. |
+| **Raspberry Pi Foundation** | [`blockly#10602`](https://github.com/RaspberryPiFoundation/blockly/pull/10602) `Closed` | Routed variable declaration extraction through `getVariableName()` across JavaScript and Dart generators. | 25 mocha generator tests passed. |
+
+---
+
+## 🛰️ Flagship Production Systems
+
+### 1. [eSIM Price Truth & Spot FX Arbitrage Engine](https://youssef-benatti.me/esim-arbitrage-calculator/)
+A production data analysis engine and buying tool covering 94 global travel destinations, 20 fiat currencies, and 136,000+ catalog prices.
+- **Core Architecture:** Custom Node static generator with zero npm runtime dependencies. Transforms raw catalog snapshots into programmatic destination pages and interactive calculators.
+- **Arbitrage Detection:** Evaluates live European Central Bank exchange rates against vendor-locked pricing tables, identifying 224 currency inversion opportunities for international travelers.
+- **Subscription Infrastructure:** Server-side entitlement gate running on Appwrite Functions and Cloudflare Workers. Verifies JWT sessions and validates Stripe webhooks under cryptographic signature checks.
+
+### 2. [AutoGEO Audit & Retrieval Platform](https://github.com/Jojoussef/autogeo-audit-engine)
+An automated B2B audit engine that scores company retrievability across generative search systems (Perplexity, SearchGPT, Gemini).
+- **Pipeline:** Monorepo orchestrating automated domain crawling, structured data extraction, and semantic citation scoring.
+- **Video Diagnostics:** Renders automated 1080p diagnostic video reports using Remotion, Node, and headless Chromium workers.
+- **Deployment:** Multi-container production stack managed with Docker Compose, Caddy reverse proxy, and Appwrite backend integrations.
+
+### 3. [Conceptionist Spacetime Observatory](https://youssef-benatti.me)
+My personal interactive spatial engineering portfolio.
+- **Physics & Optics:** Three.js celestial constellation featuring an active full-screen optical glass lens with 13 stage-specific diopter magnification steps and chromatic dispersion passes.
+- **Procedural Audio:** Web Audio API sound engine synthesizing 432 Hz Pythagorean pentatonic harmonics and continuous velocity-modulated drone oscillations directly in code.
+- **Interactive Telemetry:** In-browser SHA-256 Merkle audit verification console and live currency conversion test beds.
+
+---
+
+## 📦 Production Applications
+
+### [Seha](https://github.com/Jojoussef/it-impact-app)
+AI-assisted healthcare platform designed to process and track CNAM health insurance claims in Tunisia.
+- Built with Next.js 15, TypeScript, NextAuth, and shadcn/ui.
+- Automates medical paperwork intake through optical character extraction and structured classification pipelines.
+- Implements role-based access control for patients and medical providers with complete tracking histories.
+
+### [YuccaInfo GED](https://github.com/Jojoussef/yuccainfo_ged_backend)
+Document management and electronic archiving system for enterprise workflows.
+- **Backend:** Django REST Framework, PostgreSQL, and asynchronous OCR pipelines running Tesseract and Hugging Face transformer models.
+- **Frontend:** Next.js and TypeScript interface providing virtualized document browsing, metadata tagging, and sub-second full-text search.
+- **Repositories:** [Backend API](https://github.com/Jojoussef/yuccainfo_ged_backend) · [Frontend UI](https://github.com/Jojoussef/yuccainfo_ged_frontend)
+
+---
+
+## 🛠️ Technical Matrix
+
+```
+Languages:            Python, TypeScript, JavaScript, Go, SQL, HTML5, CSS3
+Frameworks & Libs:    Next.js 15, React, Django REST, FastAPI, Express, Three.js, Tailwind CSS
+Databases & Storage:  PostgreSQL, SQLite, Redis, Cloudflare D1 / KV, Appwrite
+Applied AI & Tools:   Inspect AI, PyTorch, Hugging Face, Tesseract OCR, Pydantic V2, Docker
+Security & Network:   Burp Suite, Wireshark, OAuth2 / OIDC, JWT / HMAC, Linux (Debian, macOS)
+Testing & Quality:    Pytest, Mocha, Ruff, Pre-commit, GitHub Actions CI/CD
+```
+
+---
+
+## 📊 Live Activity
+
+<div align="center">
+  <img height="150" src="https://github-readme-stats.vercel.app/api?username=Jojoussef&show_icons=true&hide_border=true&theme=tokyonight&rank_icon=github" alt="GitHub Stats" />
+  <img height="150" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Jojoussef&layout=compact&hide_border=true&theme=tokyonight" alt="Top Languages" />
 </div>
 
 ---
 
-### 🧑‍💻 About me
-
-**Software engineer** who enjoys taming messy real-world problems and turning them into clean, useful products. Most of my work lives at the intersection of **full-stack web development** and **applied AI** — from health-tech platforms to intelligent document systems.
-
-- 🔭 Currently building **AI-integrated products**: claims automation, document intelligence & e-commerce
-- 🌱 Always leveling up: design systems, system design, and LLM-powered workflows
-- 💬 Ask me about **Next.js**, **Django REST**, **PostgreSQL**, or why OCR + transformers make documents fun
-- ⚡ Fun fact: my code has processed more paperwork than most offices 📄
-
----
-
-### 🚀 Selected work
-
-| 🛠️ Project | 📖 What it is | 🔧 Stack |
-|:--:|---|---|
-| [**Seha**](https://github.com/Jojoussef/it-impact-app) | AI-assisted platform for digitizing & tracking CNAM health-insurance claims, with personalized health insights | Next.js 15 · TypeScript · shadcn/ui · NextAuth |
-| [**YuccaInfo GED — Backend**](https://github.com/Jojoussef/yuccainfo_ged_backend) | Smart document management API: OCR text extraction + AI-powered document classification | Django REST · PostgreSQL · Tesseract · Transformers |
-| [**YuccaInfo GED — Frontend**](https://github.com/Jojoussef/yuccainfo_ged_frontend) | Responsive UI to browse, search & organize documents with categories and rich previews | Next.js · TypeScript · Tailwind CSS |
-| **TuniCommerce** 🥷 | Full-stack e-commerce platform (private) — storefront + Medusa-based backend | Next.js · Medusa · TypeScript |
-
----
-
-### 📊 GitHub stats
-
 <div align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=Jojoussef&show_icons=true&hide_border=true&theme=tokyonight&rank_icon=github" alt="GitHub stats" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Jojoussef&layout=compact&hide_border=true&theme=tokyonight" alt="Top languages" />
-</div>
-
----
-
-<div align="center">
-  <b>Thanks for stopping by — let's build something great together 🚀</b><br/>
-  <sub>📥 Open to interesting collaborations and conversations — drop me an issue or a follow!</sub>
+  <sub>Open to systems engineering, applied AI, and security roles. Reach out via email or connect on GitHub.</sub>
 </div>
