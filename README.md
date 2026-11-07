@@ -1,5 +1,13 @@
 # Youssef Benatti
 
+<div align="center">
+  <img src="https://img.shields.io/badge/Origin-Monastir%2035.76%C2%B0N%2010.82%C2%B0E-38bdf8?style=flat-square&labelColor=030712" alt="Coordinates" />
+  <img src="https://img.shields.io/badge/Focus-Systems%20%C2%B7%20Applied%20AI%20%C2%B7%20Security-a855f7?style=flat-square&labelColor=030712" alt="Focus" />
+  <img src="https://img.shields.io/badge/Integrity-EU%20AI%20Act%20Article%2012-2dd4bf?style=flat-square&labelColor=030712" alt="Integrity" />
+  <img src="https://img.shields.io/badge/Catalog-136k%20Prices%20%C2%B7%20Paddle-f59e0b?style=flat-square&labelColor=030712" alt="Catalog" />
+  <img src="https://img.shields.io/badge/Throughput-15M%2B%20Events%2FDay-10b981?style=flat-square&labelColor=030712" alt="Throughput" />
+</div>
+
 ```
 Coordinates: 35.76°N, 10.82°E (Monastir, Tunisia)
 Role: Systems, Applied AI, and Security Engineer
@@ -33,9 +41,9 @@ Recent patches submitted to core open-source repositories:
 
 ### 1. [eSIM Price Truth & Spot FX Arbitrage Engine](https://youssef-benatti.me/esim-arbitrage-calculator/)
 A production data analysis engine and buying tool covering 94 global travel destinations, 20 fiat currencies, and 136,000+ catalog prices.
-- **Core Architecture:** Custom Node static generator with zero npm runtime dependencies. Transforms raw catalog snapshots into programmatic destination pages and interactive calculators.
+- **Architecture:** Custom Node static generator with zero npm runtime dependencies. Transforms raw catalog snapshots into programmatic destination pages and interactive calculators.
 - **Arbitrage Detection:** Evaluates live European Central Bank exchange rates against vendor-locked pricing tables, identifying 224 currency inversion opportunities for international travelers.
-- **Subscription Infrastructure:** Server-side entitlement gate running on Appwrite Functions and Cloudflare Workers. Verifies JWT sessions and validates Stripe webhooks under cryptographic signature checks.
+- **Subscription Infrastructure:** Server-side entitlement gate running on Appwrite Functions and Cloudflare Workers. Verifies JWT sessions and validates Paddle billing webhooks under cryptographic signature checks.
 
 ### 2. [AutoGEO Audit & Retrieval Platform](https://github.com/Jojoussef/autogeo-audit-engine)
 An automated B2B audit engine that scores company retrievability across generative search systems (Perplexity, SearchGPT, Gemini).
