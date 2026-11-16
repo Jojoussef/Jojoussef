@@ -1,102 +1,31 @@
 # Youssef Benatti
 
-<div align="center">
-  <img src="https://img.shields.io/badge/Origin-Monastir%2035.76%C2%B0N%2010.82%C2%B0E-38bdf8?style=flat-square&labelColor=030712" alt="Coordinates" />
-  <img src="https://img.shields.io/badge/Focus-Systems%20%C2%B7%20Applied%20AI%20%C2%B7%20Security-a855f7?style=flat-square&labelColor=030712" alt="Focus" />
-  <img src="https://img.shields.io/badge/Integrity-EU%20AI%20Act%20Article%2012-2dd4bf?style=flat-square&labelColor=030712" alt="Integrity" />
-  <img src="https://img.shields.io/badge/Catalog-136k%20Prices%20%C2%B7%20Paddle-f59e0b?style=flat-square&labelColor=030712" alt="Catalog" />
-  <img src="https://img.shields.io/badge/Throughput-15M%2B%20Events%2FDay-10b981?style=flat-square&labelColor=030712" alt="Throughput" />
-</div>
+Software engineer in Monastir, Tunisia. Most of my day goes into Python backends, Go network clients, and TypeScript web applications, with a particular habit of chasing down parser and state-sync bugs in upstream open-source libraries when I hit them in my own work.
 
-```
-Coordinates: 35.76°N, 10.82°E (Monastir, Tunisia)
-Role: Systems, Applied AI, and Security Engineer
-Portfolio: https://youssef-benatti.me
-Email: contact@youssef-benatti.me
-GitHub: @Jojoussef
-```
+### Upstream Open-Source Patches
 
-I build systems that handle strict data integrity requirements, high-throughput retrieval pipelines, and distributed web applications. My background spans cryptographic audit trails, AI evaluation frameworks, network security assessments, and production SaaS architecture.
+Merged pull requests in third-party repositories:
 
----
+- **[go-resty/resty#1274](https://github.com/go-resty/resty/pull/1274)** (Go) - Added CRLF (`\r\n`) and CR (`\r`) line-ending support to the SSE stream scanner (`splitSSEEvent` and `listenStream` in `sse.go`) per WHATWG HTML 9.2.5, fixing stalled event dispatch on non-LF servers and a race between `SSESource.Close` and `io.EOF`.
+- **[UKGovernmentBEIS/inspect_ai#6078](https://github.com/UKGovernmentBEIS/inspect_ai/pull/6078)** (Python) - Extracted `urlparse(url).path` before file extension matching in `precomputed_scores()` so HTTP(S) presigned `.jsonl` URLs carrying query strings stop falling back to the `.json` reader.
+- **[UKGovernmentBEIS/inspect_ai#5987](https://github.com/UKGovernmentBEIS/inspect_ai/pull/5987)** (Python) - Tagged blank model completions with `reason="no_response"` in `model_graded_qa` and `choice` scorers instead of grading empty strings.
+- **[holoviz/panel#9090](https://github.com/holoviz/panel/pull/9090)** (Python) - Updated `FileDownload` in `panel/widgets/misc.py` to accept any `os.PathLike` object (such as `os.DirEntry` from `os.scandir`) rather than checking `isinstance(..., (str, Path))` only.
+- **[holoviz/panel#9028](https://github.com/holoviz/panel/pull/9028)** (Python) - Fixed an inverted batch-update guard in `ReactiveESM._update_model` so `jslink` preprocessing hooks fire when child components are appended dynamically.
+- **[holoviz/panel#8974](https://github.com/holoviz/panel/pull/8974)** (Python) - Scoped embedded widget state deduplication in `panel/io/embed.py` to require matching widget types and candidate option values before merging keys.
+- **[holoviz/panel#8901](https://github.com/holoviz/panel/pull/8901)** (Python) - Guarded `DateRangeSlider._sync_values` in `panel/widgets/slider.py` against `value=None` before tuple unpacking.
 
-## ⚡ Verified Open-Source Engineering
+Open pull requests under review:
 
-Recent patches submitted to core open-source repositories:
+- **[dexidp/dex#5100](https://github.com/dexidp/dex/pull/5100)** (Go) - Returns a typed `UserNotInRequiredGroupsError` (HTTP 403 Forbidden) instead of HTTP 500 when a GitHub OAuth user lacks required org or team membership in `connector/github/github.go`.
+- **[super-productivity/super-productivity#11794](https://github.com/super-productivity/super-productivity/pull/11794)** (TypeScript) - Adds explicit connect and read timeouts to `CapacitorHttp` requests in `nativePostJson` so dropped mobile connections do not leave the SuperSync sign-in dialog spinning forever.
 
-| Ecosystem | PR / Subsystem | Technical Description | Impact & Test Scope |
-|---|---|---|---|
-| **UK Government BEIS** | [`inspect_ai#6078`](https://github.com/UKGovernmentBEIS/inspect_ai/pull/6078) `Merged` | Fixed reader selection in `precomputed_scores()` on HTTP(S) presigned URLs with query parameters. Scoped `urlparse(url).path` to prevent `.json` fallback errors on `.jsonl` files. | 2 unit test suites added. 776 scorer tests passed cleanly. |
-| **UK Government BEIS** | [`inspect_ai#5987`](https://github.com/UKGovernmentBEIS/inspect_ai/pull/5987) `Open` | Prevented empty model completions from receiving false `CORRECT` scores in `model_graded_qa` and `choice` scorers. Added `reason="no_response"` tracking. | 125 scorer tests verified. Preserved zero-choice evaluation invariants. |
-| **ZizkaDB** | [`ZizkaDB#231`](https://github.com/ZIZKA-AI-SL/ZizkaDB/pull/231) `Landed in #261` | Sealed tamper-evident audit gaps for EU AI Act Article 12 compliance. Extended SHA-256 event preimage across `tenant_id`, `agent_id`, `parent_event_id`, and DB sequence numbers in transactional `INSERT ... RETURNING`. | Added `GET /v1/events/verify`. 16 unit tests covering JSONB round-trip stability and field tamper detection. |
-| **Dex Identity Provider** | [`dex#5100`](https://github.com/dexidp/dex/pull/5100) `Open` | Replaced HTTP 500 crashes with typed `UserNotInRequiredGroupsError` returning HTTP 403 Forbidden in `connector/github/github.go`. | 3 unit tests added. Signed off with DCO per CNCF criteria. |
-| **HoloViz Panel** | [`panel#8974`](https://github.com/holoviz/panel/pull/8974) `Merged` | Fixed widget state collisions during HTML export in `panel/io/embed.py`. Required widget type and candidate value equality before merging duplicate keys. | 24 tests passed cleanly in `panel/tests/io/test_embed.py`. |
-| **HoloViz Panel** | [`panel#9028`](https://github.com/holoviz/panel/pull/9028) `Open` | Fixed inverted batch-update condition in `ReactiveESM._update_model`, enabling bidirectional `jslink` preprocessing on dynamically appended children. | Added Bokeh `CustomJS` callback verification test in `test_custom.py`. |
-| **IBM Docling** | [`docling#4993`](https://github.com/docling-project/docling/pull/4993) `Closed` | Preserved nested list structures across empty paragraph nodes in `MsWordDocumentBackend` by snapshotting list hierarchy state. | Markdown export verified with 4-space indent retention. |
-| **Raspberry Pi Foundation** | [`blockly#10602`](https://github.com/RaspberryPiFoundation/blockly/pull/10602) `Closed` | Routed variable declaration extraction through `getVariableName()` across JavaScript and Dart generators. | 25 mocha generator tests passed. |
+### Projects
 
----
+- **[eSIM Price Truth](https://github.com/Jojoussef/esim-arbitrage-calculator)** ([live site](https://youssef-benatti.me/esim-arbitrage-calculator/)) - Zero-dependency Node static site generator that compiles a snapshot of 136,040 eSIM catalog prices across 94 destinations and 20 currencies into destination guides and an FX checkout calculator. Cross-references vendor pricing tables against European Central Bank spot rates to find checkout currencies that beat a buyer's home card rate, with Paddle webhook signature verification and Cloudflare Worker entitlement checks in front of the pro tools.
+- **[Seha](https://github.com/Jojoussef/it-impact-app)** ([live demo](https://it-impact-app.vercel.app)) - Next.js 15 and TypeScript web application for digitizing and tracking Tunisian CNAM health insurance claims, built with NextAuth role gating and OCR intake pipelines.
+- **[YuccaInfo GED](https://github.com/Jojoussef/yuccainfo_ged_backend)** ([backend](https://github.com/Jojoussef/yuccainfo_ged_backend) / [frontend](https://github.com/Jojoussef/yuccainfo_ged_frontend)) - Document archiving system built on Django REST Framework, PostgreSQL, and Next.js. Runs Tesseract OCR and transformer-based document classification on uploaded PDFs and scans.
 
-## 🛰️ Flagship Production Systems
+### Contact
 
-### 1. [eSIM Price Truth & Spot FX Arbitrage Engine](https://youssef-benatti.me/esim-arbitrage-calculator/)
-A production data analysis engine and buying tool covering 94 global travel destinations, 20 fiat currencies, and 136,000+ catalog prices.
-- **Architecture:** Custom Node static generator with zero npm runtime dependencies. Transforms raw catalog snapshots into programmatic destination pages and interactive calculators.
-- **Arbitrage Detection:** Evaluates live European Central Bank exchange rates against vendor-locked pricing tables, identifying 224 currency inversion opportunities for international travelers.
-- **Subscription Infrastructure:** Server-side entitlement gate running on Appwrite Functions and Cloudflare Workers. Verifies JWT sessions and validates Paddle billing webhooks under cryptographic signature checks.
-
-### 2. [AutoGEO Audit & Retrieval Platform](https://github.com/Jojoussef/autogeo-audit-engine)
-An automated B2B audit engine that scores company retrievability across generative search systems (Perplexity, SearchGPT, Gemini).
-- **Pipeline:** Monorepo orchestrating automated domain crawling, structured data extraction, and semantic citation scoring.
-- **Video Diagnostics:** Renders automated 1080p diagnostic video reports using Remotion, Node, and headless Chromium workers.
-- **Deployment:** Multi-container production stack managed with Docker Compose, Caddy reverse proxy, and Appwrite backend integrations.
-
-### 3. [Conceptionist Spacetime Observatory](https://youssef-benatti.me)
-My personal interactive spatial engineering portfolio.
-- **Physics & Optics:** Three.js celestial constellation featuring an active full-screen optical glass lens with 13 stage-specific diopter magnification steps and chromatic dispersion passes.
-- **Procedural Audio:** Web Audio API sound engine synthesizing 432 Hz Pythagorean pentatonic harmonics and continuous velocity-modulated drone oscillations directly in code.
-- **Interactive Telemetry:** In-browser SHA-256 Merkle audit verification console and live currency conversion test beds.
-
----
-
-## 📦 Production Applications
-
-### [Seha](https://github.com/Jojoussef/it-impact-app)
-AI-assisted healthcare platform designed to process and track CNAM health insurance claims in Tunisia.
-- Built with Next.js 15, TypeScript, NextAuth, and shadcn/ui.
-- Automates medical paperwork intake through optical character extraction and structured classification pipelines.
-- Implements role-based access control for patients and medical providers with complete tracking histories.
-
-### [YuccaInfo GED](https://github.com/Jojoussef/yuccainfo_ged_backend)
-Document management and electronic archiving system for enterprise workflows.
-- **Backend:** Django REST Framework, PostgreSQL, and asynchronous OCR pipelines running Tesseract and Hugging Face transformer models.
-- **Frontend:** Next.js and TypeScript interface providing virtualized document browsing, metadata tagging, and sub-second full-text search.
-- **Repositories:** [Backend API](https://github.com/Jojoussef/yuccainfo_ged_backend) · [Frontend UI](https://github.com/Jojoussef/yuccainfo_ged_frontend)
-
----
-
-## 🛠️ Technical Matrix
-
-```
-Languages:            Python, TypeScript, JavaScript, Go, SQL, HTML5, CSS3
-Frameworks & Libs:    Next.js 15, React, Django REST, FastAPI, Express, Three.js, Tailwind CSS
-Databases & Storage:  PostgreSQL, SQLite, Redis, Cloudflare D1 / KV, Appwrite
-Applied AI & Tools:   Inspect AI, PyTorch, Hugging Face, Tesseract OCR, Pydantic V2, Docker
-Security & Network:   Burp Suite, Wireshark, OAuth2 / OIDC, JWT / HMAC, Linux (Debian, macOS)
-Testing & Quality:    Pytest, Mocha, Ruff, Pre-commit, GitHub Actions CI/CD
-```
-
----
-
-## 📊 Live Activity
-
-<div align="center">
-  <img height="150" src="https://github-readme-stats.vercel.app/api?username=Jojoussef&show_icons=true&hide_border=true&theme=tokyonight&rank_icon=github" alt="GitHub Stats" />
-  <img height="150" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Jojoussef&layout=compact&hide_border=true&theme=tokyonight" alt="Top Languages" />
-</div>
-
----
-
-<div align="center">
-  <sub>Open to systems engineering, applied AI, and security roles. Reach out via email or connect on GitHub.</sub>
-</div>
+- Web: [youssef-benatti.me](https://youssef-benatti.me)
+- Email: [contact@youssef-benatti.me](mailto:contact@youssef-benatti.me)
