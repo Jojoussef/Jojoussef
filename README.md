@@ -32,4 +32,4 @@ Open pull requests under review:
 ### Contact
 
 - Web: [youssef-benatti.me](https://youssef-benatti.me)
-- Email: [contact@youssef-benatti.me](mailto:contact@youssef-benatti.me)
+- Email: [contact@youssef-benatti.me](mailto:youssef.benatti.pers@gmail.com)
